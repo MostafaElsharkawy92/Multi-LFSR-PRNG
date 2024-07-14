@@ -1,7 +1,4 @@
-# Cite
-https://www.researchsquare.com/article/rs-4518270/v1
-
-Hardware Implementation of Multi-LFSR Pseudo Random Number Generator, 04 June 2024, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-4518270/v1]
+Hardware Implementation of Multi-LFSR Pseudo Random Number Generator
 
 # T04-new
 This is an implementation of a hardware pseudo-random number generator using LFSR for generation, and ambient electromagnetic noise for seed generation.
@@ -30,7 +27,6 @@ The seed is obtained from electromagnetic noise from the environment. An ADC rea
 A testbench was also written to test the randomness of the generated numbers. On each generation of a new random number by the generator module, the testbench writes the number to a text file. After storing enough numbers for testing, the textfile is parsed by our Python code for histogram generation to analyse if the generated numbers are random enough. This testbench allowed us to rapidly test different combintions of LFSRs with different feedback polynomials to determine which combination of feedback polynomials gives us the most random set of numbers. 
 
 
-### [Video](https://drive.google.com/file/d/17NhRcyVTErjpbELrYKHrmbgha2508xAc/view?usp=sharing)
 
 ## Challenges
 
@@ -44,15 +40,3 @@ A testbench was also written to test the randomness of the generated numbers. On
 
 ## Data analysis
 The raw hexadecimal random numbers were then sent from the FPGA to the computer via a UART and subsequently stored in an array. The array was used to plot a histogram showing the number distribution. Taking 1 million values, the max value we get is 65535.000000 while our mean is 32766.275753 which is half. 
-
-![FPGA](https://github.com/theepicflyer/dsl/assets/158417690/58a9c25d-21b8-428a-a938-27322ae68b57)
-
-Figure 1: FPGA distribution
-
-![avg](https://github.com/theepicflyer/dsl/assets/158417690/c48550c0-33de-4ede-af16-756ad809fc1f)
-
-Figure 2: Average vs Time
-
-![image](https://github.com/theepicflyer/dsl/assets/149221658/7823e06d-46d6-4988-a9b9-aa9a5a4a83ab)
-
-Figure 3: Gaussian distribution
